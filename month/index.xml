@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Month on Ashish Saxena - My personal thoughts, ideas and rants</title>
+    <link>https://ashishsaxena.net/month/</link>
+    <description>Recent content in Month on Ashish Saxena - My personal thoughts, ideas and rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://ashishsaxena.net/month/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2020/10</title>
+      <link>https://ashishsaxena.net/2020/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashishsaxena.net/2020/10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2020/11</title>
+      <link>https://ashishsaxena.net/2020/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashishsaxena.net/2020/11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2020/12</title>
+      <link>https://ashishsaxena.net/2020/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashishsaxena.net/2020/12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2021/02</title>
+      <link>https://ashishsaxena.net/2021/02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ashishsaxena.net/2021/02/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

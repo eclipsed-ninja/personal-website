@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2021/02 on Ashish Saxena - My personal thoughts, ideas and rants</title>
+    <link>https://ashishsaxena.net/2021/02/</link>
+    <description>Recent content in 2021/02 on Ashish Saxena - My personal thoughts, ideas and rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://ashishsaxena.net/2021/02/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Update to REAK&#39;s PBX / IVR system</title>
+      <link>https://ashishsaxena.net/posts/ivr-update/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/posts/ivr-update/</guid>
+      <description>&lt;p&gt;An update to the earlier blog post regarding the PBX / IVR System, Due to massive interest
+I&amp;rsquo;ve decided to make the asterisk config available publically.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

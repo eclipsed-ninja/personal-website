@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Ashish Saxena - My personal thoughts, ideas and rants</title>
+    <link>https://ashishsaxena.net/categories/</link>
+    <description>Recent content in Categories on Ashish Saxena - My personal thoughts, ideas and rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0530</lastBuildDate><atom:link href="https://ashishsaxena.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hack</title>
+      <link>https://ashishsaxena.net/category/hack/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/category/hack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Startup</title>
+      <link>https://ashishsaxena.net/category/startup/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/category/startup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Thoughts</title>
+      <link>https://ashishsaxena.net/category/thoughts/</link>
+      <pubDate>Wed, 02 Dec 2020 00:47:00 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/category/thoughts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://ashishsaxena.net/category/programming/</link>
+      <pubDate>Mon, 30 Nov 2020 11:49:39 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/category/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://ashishsaxena.net/category/web/</link>
+      <pubDate>Mon, 30 Nov 2020 11:49:39 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/category/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial</title>
+      <link>https://ashishsaxena.net/category/tutorial/</link>
+      <pubDate>Mon, 12 Oct 2020 01:12:39 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/category/tutorial/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

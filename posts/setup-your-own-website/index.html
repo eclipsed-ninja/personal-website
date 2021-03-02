@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <base href="https://ashishsaxena.net" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Start your own blog for free in 60 seconds</title>
+    
+
+<meta itemprop="name" content="Ashish Saxena - My personal thoughts, ideas and rants | Start your own blog for free in 60 seconds" />
+<meta name="application-name" content="Ashish Saxena - My personal thoughts, ideas and rants | Start your own blog for free in 60 seconds" />
+<meta name="description" content="It&#39;s my personal website, which I use as a public journal on the internet to jot down my personal ideas, findings and rants. I&#39;m Ashish Saxena, founder of REAK INFOTECH LLP." />
+<meta itemprop="description" content="It&#39;s my personal website, which I use as a public journal on the internet to jot down my personal ideas, findings and rants. I&#39;m Ashish Saxena, founder of REAK INFOTECH LLP." />
+<link rel="canonical" href="https://ashishsaxena.net/posts/setup-your-own-website/" itemprop="url" /> 
+<meta name="url" content="https://ashishsaxena.net/posts/setup-your-own-website/" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ashishsaxena.netsitemap.xml" /> 
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="css/style.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <meta property="og:title" content="Start your own blog for free in 60 seconds" />
+<meta property="og:description" content="This post will walk you through to setup your own personal website for free using static site generators and leveraging the power of CI/CD tools. Following the tutorial you will be able to deploy and manage your website using git." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ashishsaxena.net/posts/setup-your-own-website/" />
+<meta property="og:image" content="https://ashishsaxena.net/images/setup-your-own-website/cover.png" />
+<meta property="article:published_time" content="2020-10-12T01:12:39+05:30" />
+<meta property="article:modified_time" content="2020-10-12T01:12:39+05:30" /><meta property="og:site_name" content="Ashish Saxena" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ashishsaxena.net/images/setup-your-own-website/cover.png"/>
+
+<meta name="twitter:title" content="Start your own blog for free in 60 seconds"/>
+<meta name="twitter:description" content="This post will walk you through to setup your own personal website for free using static site generators and leveraging the power of CI/CD tools. Following the tutorial you will be able to deploy and manage your website using git."/>
+
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "name": "Ashish Saxena",
+        "headline": "Start your own blog for free in 60 seconds",
+        "description": "It\u0027s my personal website, which I use as a public journal on the internet to jot down my personal ideas, findings and rants. I\u0027m Ashish Saxena, founder of REAK INFOTECH LLP.",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ashishsaxena.net\/posts\/setup-your-own-website\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ashish Saxena"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ashish Saxena"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ashish Saxena"
+        },
+        "copyrightHolder" : "Ashish Saxena",
+        "copyrightYear" : "2020",
+        "dateCreated": "2020-10-12T01:12:39.00Z",
+        "datePublished": "2020-10-12T01:12:39.00Z",
+        "dateModified": "2020-10-12T01:12:39.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ashish Saxena",
+            "url": "https://ashishsaxena.net",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ashishsaxena.net\/images\/profile.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": ["https://ashishsaxena.net/images/setup-your-own-website/cover.png"],
+        "url" : "https:\/\/ashishsaxena.net\/posts\/setup-your-own-website\/",
+        "wordCount" : "1509",
+        "genre" : [ "Tutorial" , "Web" ],
+        "keywords" : [ "tech" , "setup" , "website" , "blog" , "github pages" , "travis-ci" ]
+    }
+</script>
+
+</head>
+<body><div class="container is-hidden-tablet">
+    <div id="mobile-menu-show" class="menu-icons-left">
+        <i class="fas fa-bars"></i>
+    </div>
+</div>
+<div id="mobile-menu" class="mobile-menu has-text-black">
+    <div class="mobile-menu-close">
+        <span id="mobile-menu-close">
+            <i class="fas fa-times is-size-4"></i>
+        </span>
+    </div>
+    <div class="menu-content">
+        <span class="is-size-1">Menu</span>
+        <aside class="menu">
+            <ul class="menu-list">
+                
+                <li class="is-size-5 has-text-justified"><a href="/">
+                        <i class="fas fa-home"></i>
+                        
+                        
+                        
+                        <span class="pl-2 is-5">Home</span></a></li>
+                
+                <li class="is-size-5 has-text-justified"><a href="/about/">
+                        
+                        <i class="far fa-address-card"></i>
+                        
+                        
+                        <span class="pl-2 is-5">About</span></a></li>
+                
+                <li class="is-size-5 has-text-justified"><a href="/contact/">
+                        
+                        
+                        <i class="far fa-envelope"></i>
+                        
+                        <span class="pl-2 is-5">Contact</span></a></li>
+                
+                <li class="is-size-5 has-text-justified"><a href="/archive/">
+                        
+                        
+                        
+                        <i class="fas fa-archive"></i>
+                        <span class="pl-2 is-5">Archive</span></a></li>
+                
+            </ul>
+        </aside>
+        <div class="mobile-menu-filters">
+            <span class="title is-5">Posts by Year</span>
+            <div class="buttons">
+                
+                <a href="/2020/" class="button is-rounded has-background-grey has-text-white" title="2020">
+                    <span>2020</span>
+                </a>
+                
+                <a href="/2021/" class="button is-rounded has-background-grey has-text-white" title="2021">
+                    <span>2021</span>
+                </a>
+                
+            </div>
+            <span class="title is-5">Posts by Category</span>
+            <div class="buttons">
+                
+                <a href="/category/hack/" class="button is-rounded has-background-grey-dark has-text-white" title="Hack">
+                    <span>Hack</span>
+                </a>
+                
+                <a href="/category/programming/" class="button is-rounded has-background-grey-dark has-text-white" title="Programming">
+                    <span>Programming</span>
+                </a>
+                
+                <a href="/category/startup/" class="button is-rounded has-background-grey-dark has-text-white" title="Startup">
+                    <span>Startup</span>
+                </a>
+                
+                <a href="/category/thoughts/" class="button is-rounded has-background-grey-dark has-text-white" title="Thoughts">
+                    <span>Thoughts</span>
+                </a>
+                
+                <a href="/category/tutorial/" class="button is-rounded has-background-grey-dark has-text-white" title="Tutorial">
+                    <span>Tutorial</span>
+                </a>
+                
+                <a href="/category/web/" class="button is-rounded has-background-grey-dark has-text-white" title="Web">
+                    <span>Web</span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div><section class="section main-container">
+            <div class="columns"><div class="column is-one-fifth is-hidden-mobile">
+        <div class="has-text-centered sticky">
+            <figure class="image is-128x128 is-inline-block avatar-image">
+                <img loading="lazy" class="is-rounded" alt="Ashish Saxena Avatar"
+                                        src="images/profile.png">
+            </figure>
+            
+            
+            <p class="title is-3 site-title">Ashish Saxena</p>
+            <p class="subtitle is-4 site-description">My personal thoughts, ideas and rants</p>
+            
+            <aside class="menu desktop-menu">
+                <ul class="menu-list">
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/">
+                            <i class="fas fa-home"></i>
+                            
+                            
+                            
+                            <span class="pl-2 is-5">Home</span></a></li>
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/about/">
+                            
+                            <i class="far fa-address-card"></i>
+                            
+                            
+                            <span class="pl-2 is-5">About</span></a></li>
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/contact/">
+                            
+                            
+                            <i class="far fa-envelope"></i>
+                            
+                            <span class="pl-2 is-5">Contact</span></a></li>
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/archive/">
+                            
+                            
+                            
+                            <i class="fas fa-archive"></i>
+                            <span class="pl-2 is-5">Archive</span></a></li>
+                    
+                </ul>
+            </aside>
+            <div class="level is-size-3 is-hidden-mobile social-icons">
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://www.facebook.com/saxena.ashish55/ target="_blank" class="has-text-grey-dark" rel="noreferrer" title="facebook profile">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://github.com/eclipsed-ninja/ target="_blank" class="has-text-grey-dark" rel="noreferrer" title="github profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://www.linkedin.com/in/ashishsaxena5/ target="_blank" class="has-text-grey-dark" rel="noreferrer" title="linkedin profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://twitter.com/eclipsed_ninja target="_blank" class="has-text-grey-dark" rel="noreferrer" title="twitter profile">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="content has-text-centered is-hidden-mobile copyright">
+                <p class="">
+                    <a href="https://reak.in" class="has-text-grey-dark" title="crafted with love at reak infotech llp">Crafted with <i class="fa fa-heart has-text-danger-dark"></i> @ REAK</a>
+                    <br /><i class="far fa-copyright"></i> 2021 - Ashish Saxena
+                </p>
+            </div>
+        </div>
+</div>
+
+<div class="container column is-hidden-tablet">
+    <div class="columns is-mobile">
+        <div class="column">
+            <figure class="image is-128x128">
+                <img loading="lazy" class="is-rounded" alt="Ashish Saxena Avatar"
+                                        src="images/profile.png">
+            </figure>
+        </div>
+        <div class="column has-text-left">
+            <p class="title is-4">Ashish Saxena</p>
+            <p class="subtitle is-6 mt-2">My personal thoughts, ideas and rants</p>
+        </div>
+    </div>
+</div>
+
+<div class="column">
+    <div class="container">
+    <div class="card">
+            
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img loading="lazy" src="images/setup-your-own-website/cover.png" alt="Setup your own website / blog for Free">
+            </figure>
+        </div>
+        
+        <div class="card-content">
+            <h1 class="title">Start your own blog for free in 60 seconds</h1>
+            <div class="buttons">
+                
+                <a class="button is-rounded is-small has-background-grey-dark has-text-white p-2" href="https://ashishsaxena.net/category/tutorial/" title="Tutorial">
+                    Tutorial
+                </a>
+                
+                <a class="button is-rounded is-small has-background-grey-dark has-text-white p-2" href="https://ashishsaxena.net/category/web/" title="Web">
+                    Web
+                </a>
+                
+            </div>
+            <div class="pb-6">
+                <time datetime="2020-10-12"><i class="far fa-clock"></i> October 12, 2020</time>
+            </div>
+            <h2 class="subtitle content is-size-6">
+                <p>Starting your own personal blog is a good way of sharing your thoughts and tutorials, This tutorial will guide you in setting up a blog using Github Pages</p>
+<h3 id="why-reinvent-the-wheel-" class="is-size-3">Why reinvent the wheel ?</h3>
+<p>I believe this would be the first question of any WWW-poweruser, Solutions like Medium and Wordpress.org are pretty good to immediately get started with your own blog but the advantage of having your own blog are</p>
+<ul>
+<li><strong>No stupid licensing</strong> Take example of Medium if you ever gone through their ToS they get exclusive license to your content that you post on their website. I am not saying they have ill-intentions but they are a free service and they need to make money so if push comes to shove you become their product (or atleast your content).</li>
+<li><strong>Control</strong> With your own infrastructure and code, you maintain control of your data as well as availability of your blog. Internet is filled with stories of these companies shutting down blogs or blocking profiles without any notification or redressal mechanism. <a href="https://www.vox.com/2016/7/30/12303070/dennis-cooper-blog-deleted-google" target="_blank" rel="noreferrer noopener">Here&rsquo;s an example of the same</a>
+
+</li>
+<li><strong>Freedom of Speech and Censorship</strong>  Probably the most important of all, I&rsquo;m a firm believer in expression of speech but in today&rsquo;s world its harder than ever. Recent developments has made the world a lot more intolerable irrespective of your leaning. Everybody is persuing their agenda and narratives which doesn&rsquo;t suit the agenda get muffled. This enables you to freely express your thoughts  without worrying about the political or social leaning / agenda of your publisher or which country they are based in or majority of investment / control is from.</li>
+<li><strong>No ads</strong> Well this wouldn&rsquo;t apply to people who want to commercialize their blog, but for people like me who just want a platform to share their thoughts without any commercial interests I like the idea that there can never be any ads unless I implement them. (If Github starts injecting ads, you can always migrate to others or just buy a shared hosting for couple of dollars)</li>
+<li><strong>Opensource</strong> Last but not the least, You can opensource the platform that you built or improve on the existing ones ! This website is entirely open source and if you want a similar website you can just clone it and start using it, isn&rsquo;t it awesome ?</li>
+</ul>
+<h3 id="enough-chit-chat-show-me-the-code-" class="is-size-3">Enough chit-chat, Show me the code !</h3>
+<p>Okay, here we go. Static Site Generators are nothing new or complex, It can be defined as <em>&ldquo;a dyanmic way to generate static html pages&rdquo;</em>. Basically you harness the power of programming to generate static HTML from templates.</p>
+<p>There are probably hundreds of Static Site Generators or SSG for short in the wild Jekyll, Hugo, Gatsby, NextJS just to name a few, Here in this tutorial I used <a href="https://gohugo.io/" target="_blank" rel="noreferrer noopener">Hugo</a>
+
+ as my choice because I like Go and it felt like a good choice for a simple blog.</p>
+<p>Setting up Hugo is pretty simple, You can follow the <a href="https://gohugo.io/getting-started/installing" target="_blank" rel="noreferrer noopener">instructions</a>
+
+ or <code>brew install hugo</code> if you have brew setup on your OS.</p>
+<p>Once done, just follow the <a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noreferrer noopener">quick-start guide</a>
+
+ to setup your website and install a theme. Hugo offers a brilliant <a href="https://themes.gohugo.io/" target="_blank" rel="noreferrer noopener">library of themes</a>
+
+ to choose from.</p>
+<p>If you dig the design of this particular website and want to setup something similar to this, Well you&rsquo;re in luck because this website is opensource. You can clone the repo <a href="https://github.com/REAK-INFOTECH-LLP/hugo-personal-blog" target="_blank" rel="noreferrer noopener">https://github.com/REAK-INFOTECH-LLP/hugo-personal-blog</a>
+
+</p>
+<p>The above link is to the boilerplate setup yourself version, if you want to get ideas on how I customized it for my own use clone this repo <a href="https://github.com/eclipsed-ninja/personal-website" target="_blank" rel="noreferrer noopener">https://github.com/eclipsed-ninja/personal-website</a>
+
+</p>
+<h3 id="deploying-and-hosting-on-github-pages" class="is-size-3">Deploying and Hosting on Github Pages</h3>
+<p>So I expect by now you should have a website working locally with Hugo. Next step will be to deploy the website to the world. There are two ways of doing this, either build the static website locally and upload the generated files to github and set it up manually. <strong>There&rsquo;s no fun in that !</strong></p>
+<p><strong>So we do what engineers do, Over engineer it !</strong>
+Okay so the idea is the following, you keep your source in a github repo either public or private and build it using online build tools. Benefit being you can now use any device to publish updates to your website and whenever there&rsquo;s a change the online build service will build it and deploy the updated pages !</p>
+<p>For my website I chose <a href="https://travis-ci.org/" target="_blank" rel="noreferrer noopener">Travis-CI</a>
+
+ to build my website whenever there is an update to source code and push to a different branch on Github to which Github Pages is linked with.</p>
+<p><strong>So how do this work ?</strong></p>
+<p>You can register on the website and activate your repo on Travis dashboard.
+<img src="images/setup-your-own-website/link-travis-github.png" alt="Travis Github Integration"></p>
+<p>Once done, as long as your repo contains a <code>.travis.yml</code> file in it&rsquo;s root it should work based on the configuration you provided in the file.</p>
+<p>For this blog, I am using the following config</p>
+<pre><code>dist: bionic
+sudo: true
+install:
+  - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.75.1_Linux-64bit.deb
+  - rm -rf hugo_0.75.1_Linux-64bit.deb
+
+script:
+  - npm install
+  - npm run css-build
+  - hugo -d ../website
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: false
+  local_dir: ../website
+  on:
+    branch: main
+  fqdn: ashishsaxena.net
+</code></pre><p>I&rsquo;ll break the down so you can generate your own config easily</p>
+<pre><code>dist: bionic
+sudo: true
+</code></pre><p>Pretty self-explanatory that we are instructing travis to use Ubuntu Bionic (18.04) Distribution for this build, I use the same on my local env so its easier to ensure whatever commands I am using will work on remote build too.</p>
+<p>I believe sudo is now deprecated, haven&rsquo;t tested it without it but earlier it was required to have this added if sudo was needed mainly for package installations etc.</p>
+<pre><code>install:
+  - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.75.1_Linux-64bit.deb
+  - rm -rf hugo_0.75.1_Linux-64bit.deb
+</code></pre><p>Installing dependencies, Hugo isn&rsquo;t standard on Travis build systems so we have to download the release and install it. Last line is just cleaning up the deb file post install <em>(force of habit :D)</em></p>
+<pre><code>script:
+  - npm install
+  - npm run css-build
+  - hugo -d ../website
+</code></pre><p>This is the execution block,</p>
+<ul>
+<li><code>npm installs</code>, installs the packages <code>node-sass</code> and <code>bulma</code></li>
+<li><code>npm run css-build</code>, builds CSS from SCSS for this website as I am using <a href="https://bulma.io/" target="_blank" rel="noreferrer noopener">bulma framework</a>
+
+, it&rsquo;s placed in the assets folder which hugo uses.</li>
+<li><code>hugo -d ../website</code> builds the static website inside the <code>website</code> folder as specified</li>
+</ul>
+<pre><code>deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: false
+  local_dir: ../website
+  on:
+    branch: main
+  fqdn: ashishsaxena.net
+</code></pre><p>This is the deploy block, which contains the configuration needed for proper deployment to github pages.</p>
+<ul>
+<li><code>provider: pages</code> Travis recognizes Github Pages and have an internal action mapped to it, so you don&rsquo;t have to write bash commands to push to your repo. By default it pushes to <code>gh-pages</code> branch when provider is set to pages.</li>
+<li><code>skip_cleanup: true</code> This flag is to avoid upload any generated binaries or dependencies usually when testing, since we don&rsquo;t really need that we can skip it</li>
+<li><code>github_token: $GITHUB_TOKEN</code> This is how Travis gets access to your account to push the generated static website to your repo in a new branch, You can generate this token from <a href="https://github.com/settings/tokens" target="_blank" rel="noreferrer noopener">here</a>
+
+ and set it in the settings section of Travis as shown in the image
+<img src="images/setup-your-own-website/travis-settings.png" alt="Travis Key Setup"></li>
+<li><code>keep_history: false</code> This is down to personal preference, This flag is set to true cleans out branch history (force git push) on the deploy branch. I don&rsquo;t really want to hold useless data on github so I keep it off. You can turn to true if you want a snapshot of your website at each update.</li>
+<li><code>local_dir: ../website</code> Since we only need to deploy the generated static website, that&rsquo;s why we are forcing travis to sync only this folder instead of the source. We instructed hugo earlier to save the output in this particular folder.</li>
+<li><code>fqdn: ashishsaxena.net</code> A tricky variable which left me scratching my head for a while, A bit of a backstory the first versions of this config didn&rsquo;t had this flag and I was using custom domain with github-pages but with each update to the blog it removed my fqdn settings. This ensures that custom domain still sticks after update, the value should reflect whatever custom domain you have in your github pages.</li>
+</ul>
+<h3 id="managing-your-blog" class="is-size-3">Managing your Blog</h3>
+<p>Now you have your blog up and running, The next questions is how to manage it ?, adding new posts , updating settings etc.
+The setup that we just did basically makes this part easier, it&rsquo;s still no WP-Admin but it&rsquo;s certainly very easy to work with. You can use any device which has git to make updates to your source as soon as you hit <code>git push</code> the elves will start working and deliver updated content to your website. It&rsquo;s that easy !</p>
+<p>You can even use github web interface to make changes to your file and because of Travis listener it will build the release whenever there&rsquo;s a new commit pushed to the repo.</p>
+<p><strong>Share your word with the world, and explore viewpoints of others.</strong></p>
+            </h2>
+            <div class="tags mt-6">
+                <span class="pr-3">
+                    <i class="fas fa-tags"></i>
+                </span>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/tech/" title="Tech">Tech</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/setup/" title="Setup">Setup</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/website/" title="Website">Website</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/blog/" title="Blog">Blog</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/github-pages/" title="Github pages">Github pages</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/travis-ci/" title="Travis ci">Travis ci</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="column is-one-fifth">
+</div>
+
+            </div><script>
+    document.getElementById("mobile-menu-show").addEventListener("click", function(){
+        document.getElementById("mobile-menu").classList.add("show");
+    });
+
+    document.getElementById("mobile-menu-close").addEventListener("click", function(){
+        document.getElementById("mobile-menu").classList.remove("show");
+    });
+</script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-180784437-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</section><footer class="footer is-clickable  is-hidden-tablet">
+    <div class="level is-size-3 is-mobile">
+        
+        <div class="level-item has-text-centered">
+            <a href=https://www.facebook.com/saxena.ashish55/ target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <div class="level-item has-text-centered">
+            <a href=https://github.com/eclipsed-ninja/ target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        
+        <div class="level-item has-text-centered">
+            <a href=https://www.linkedin.com/in/ashishsaxena5/ target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        
+        <div class="level-item has-text-centered">
+            <a href=https://twitter.com/eclipsed_ninja target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        
+    </div>
+    <div class="content has-text-centered">
+        <p class="">
+            <a href="https://reak.in" class="has-text-grey-dark" title="crafted with love at reak infotech llp">Crafted with <i class="fa fa-heart has-text-danger-dark"></i> @ REAK</a>
+            <br /><i class="far fa-copyright"></i> 2021 - Ashish Saxena
+        </p>
+    </div>
+</footer>
+</body>
+</html>
+</body>
+</html>

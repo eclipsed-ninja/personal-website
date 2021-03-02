@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech on Ashish Saxena - My personal thoughts, ideas and rants</title>
+    <link>https://ashishsaxena.net/tag/tech/</link>
+    <description>Recent content in tech on Ashish Saxena - My personal thoughts, ideas and rants</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Feb 2021 00:00:00 +0530</lastBuildDate><atom:link href="https://ashishsaxena.net/tag/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Update to REAK&#39;s PBX / IVR system</title>
+      <link>https://ashishsaxena.net/posts/ivr-update/</link>
+      <pubDate>Sat, 27 Feb 2021 00:00:00 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/posts/ivr-update/</guid>
+      <description>&lt;p&gt;An update to the earlier blog post regarding the PBX / IVR System, Due to massive interest
+I&amp;rsquo;ve decided to make the asterisk config available publically.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How REAK operates it&#39;s IVR/PBX system for $7/mo</title>
+      <link>https://ashishsaxena.net/posts/how-i-built-own-ivr-under-1000/</link>
+      <pubDate>Sun, 25 Oct 2020 01:12:39 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/posts/how-i-built-own-ivr-under-1000/</guid>
+      <description>&lt;p&gt;This is the story of how my company runs it&amp;rsquo;s own cloud PBX / IVR system for a really low running and setup cost, and how your startup or small business can benefit from it.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Start your own blog for free in 60 seconds</title>
+      <link>https://ashishsaxena.net/posts/setup-your-own-website/</link>
+      <pubDate>Mon, 12 Oct 2020 01:12:39 +0530</pubDate>
+      
+      <guid>https://ashishsaxena.net/posts/setup-your-own-website/</guid>
+      <description>&lt;p&gt;Starting your own personal blog is a good way of sharing your thoughts and tutorials, This tutorial will guide you in setting up a blog using Github Pages&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

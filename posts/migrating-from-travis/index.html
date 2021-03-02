@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <base href="https://ashishsaxena.net" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Moving away from TravisCI to Github Actions</title>
+    
+
+<meta itemprop="name" content="Ashish Saxena - My personal thoughts, ideas and rants | Moving away from TravisCI to Github Actions" />
+<meta name="application-name" content="Ashish Saxena - My personal thoughts, ideas and rants | Moving away from TravisCI to Github Actions" />
+<meta name="description" content="It&#39;s my personal website, which I use as a public journal on the internet to jot down my personal ideas, findings and rants. I&#39;m Ashish Saxena, founder of REAK INFOTECH LLP." />
+<meta itemprop="description" content="It&#39;s my personal website, which I use as a public journal on the internet to jot down my personal ideas, findings and rants. I&#39;m Ashish Saxena, founder of REAK INFOTECH LLP." />
+<link rel="canonical" href="https://ashishsaxena.net/posts/migrating-from-travis/" itemprop="url" /> 
+<meta name="url" content="https://ashishsaxena.net/posts/migrating-from-travis/" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://ashishsaxena.netsitemap.xml" /> 
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="css/style.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <meta property="og:title" content="Moving away from TravisCI to Github Actions" />
+<meta property="og:description" content="Migrating this blog from TravisCI to Github Actions" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ashishsaxena.net/posts/migrating-from-travis/" />
+<meta property="og:image" content="https://ashishsaxena.net/images/moving-away-from-travis-to-github/cover.png" />
+<meta property="article:published_time" content="2020-11-30T11:49:39+05:30" />
+<meta property="article:modified_time" content="2020-11-30T11:49:39+05:30" /><meta property="og:site_name" content="Ashish Saxena" />
+
+    <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://ashishsaxena.net/images/moving-away-from-travis-to-github/cover.png"/>
+
+<meta name="twitter:title" content="Moving away from TravisCI to Github Actions"/>
+<meta name="twitter:description" content="Migrating this blog from TravisCI to Github Actions"/>
+
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "name": "Ashish Saxena",
+        "headline": "Moving away from TravisCI to Github Actions",
+        "description": "It\u0027s my personal website, which I use as a public journal on the internet to jot down my personal ideas, findings and rants. I\u0027m Ashish Saxena, founder of REAK INFOTECH LLP.",
+        "inLanguage": "en-us",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/ashishsaxena.net\/posts\/migrating-from-travis\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ashish Saxena"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ashish Saxena"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ashish Saxena"
+        },
+        "copyrightHolder" : "Ashish Saxena",
+        "copyrightYear" : "2020",
+        "dateCreated": "2020-11-30T11:49:39.00Z",
+        "datePublished": "2020-11-30T11:49:39.00Z",
+        "dateModified": "2020-11-30T11:49:39.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ashish Saxena",
+            "url": "https://ashishsaxena.net",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/ashishsaxena.net\/images\/profile.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": ["https://ashishsaxena.net/images/moving-away-from-travis-to-github/cover.png"],
+        "url" : "https:\/\/ashishsaxena.net\/posts\/migrating-from-travis\/",
+        "wordCount" : "1202",
+        "genre" : [ "Programming" , "Web" ],
+        "keywords" : [ "programming" , "travisci" , "github" , "actions" ]
+    }
+</script>
+
+</head>
+<body><div class="container is-hidden-tablet">
+    <div id="mobile-menu-show" class="menu-icons-left">
+        <i class="fas fa-bars"></i>
+    </div>
+</div>
+<div id="mobile-menu" class="mobile-menu has-text-black">
+    <div class="mobile-menu-close">
+        <span id="mobile-menu-close">
+            <i class="fas fa-times is-size-4"></i>
+        </span>
+    </div>
+    <div class="menu-content">
+        <span class="is-size-1">Menu</span>
+        <aside class="menu">
+            <ul class="menu-list">
+                
+                <li class="is-size-5 has-text-justified"><a href="/">
+                        <i class="fas fa-home"></i>
+                        
+                        
+                        
+                        <span class="pl-2 is-5">Home</span></a></li>
+                
+                <li class="is-size-5 has-text-justified"><a href="/about/">
+                        
+                        <i class="far fa-address-card"></i>
+                        
+                        
+                        <span class="pl-2 is-5">About</span></a></li>
+                
+                <li class="is-size-5 has-text-justified"><a href="/contact/">
+                        
+                        
+                        <i class="far fa-envelope"></i>
+                        
+                        <span class="pl-2 is-5">Contact</span></a></li>
+                
+                <li class="is-size-5 has-text-justified"><a href="/archive/">
+                        
+                        
+                        
+                        <i class="fas fa-archive"></i>
+                        <span class="pl-2 is-5">Archive</span></a></li>
+                
+            </ul>
+        </aside>
+        <div class="mobile-menu-filters">
+            <span class="title is-5">Posts by Year</span>
+            <div class="buttons">
+                
+                <a href="/2020/" class="button is-rounded has-background-grey has-text-white" title="2020">
+                    <span>2020</span>
+                </a>
+                
+                <a href="/2021/" class="button is-rounded has-background-grey has-text-white" title="2021">
+                    <span>2021</span>
+                </a>
+                
+            </div>
+            <span class="title is-5">Posts by Category</span>
+            <div class="buttons">
+                
+                <a href="/category/hack/" class="button is-rounded has-background-grey-dark has-text-white" title="Hack">
+                    <span>Hack</span>
+                </a>
+                
+                <a href="/category/programming/" class="button is-rounded has-background-grey-dark has-text-white" title="Programming">
+                    <span>Programming</span>
+                </a>
+                
+                <a href="/category/startup/" class="button is-rounded has-background-grey-dark has-text-white" title="Startup">
+                    <span>Startup</span>
+                </a>
+                
+                <a href="/category/thoughts/" class="button is-rounded has-background-grey-dark has-text-white" title="Thoughts">
+                    <span>Thoughts</span>
+                </a>
+                
+                <a href="/category/tutorial/" class="button is-rounded has-background-grey-dark has-text-white" title="Tutorial">
+                    <span>Tutorial</span>
+                </a>
+                
+                <a href="/category/web/" class="button is-rounded has-background-grey-dark has-text-white" title="Web">
+                    <span>Web</span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div><section class="section main-container">
+            <div class="columns"><div class="column is-one-fifth is-hidden-mobile">
+        <div class="has-text-centered sticky">
+            <figure class="image is-128x128 is-inline-block avatar-image">
+                <img loading="lazy" class="is-rounded" alt="Ashish Saxena Avatar"
+                                        src="images/profile.png">
+            </figure>
+            
+            
+            <p class="title is-3 site-title">Ashish Saxena</p>
+            <p class="subtitle is-4 site-description">My personal thoughts, ideas and rants</p>
+            
+            <aside class="menu desktop-menu">
+                <ul class="menu-list">
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/">
+                            <i class="fas fa-home"></i>
+                            
+                            
+                            
+                            <span class="pl-2 is-5">Home</span></a></li>
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/about/">
+                            
+                            <i class="far fa-address-card"></i>
+                            
+                            
+                            <span class="pl-2 is-5">About</span></a></li>
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/contact/">
+                            
+                            
+                            <i class="far fa-envelope"></i>
+                            
+                            <span class="pl-2 is-5">Contact</span></a></li>
+                    
+                    <li class="is-size-5 has-text-justified"><a href="/archive/">
+                            
+                            
+                            
+                            <i class="fas fa-archive"></i>
+                            <span class="pl-2 is-5">Archive</span></a></li>
+                    
+                </ul>
+            </aside>
+            <div class="level is-size-3 is-hidden-mobile social-icons">
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://www.facebook.com/saxena.ashish55/ target="_blank" class="has-text-grey-dark" rel="noreferrer" title="facebook profile">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://github.com/eclipsed-ninja/ target="_blank" class="has-text-grey-dark" rel="noreferrer" title="github profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://www.linkedin.com/in/ashishsaxena5/ target="_blank" class="has-text-grey-dark" rel="noreferrer" title="linkedin profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                
+                <div class="level-item has-text-centered">
+                    <a href=https://twitter.com/eclipsed_ninja target="_blank" class="has-text-grey-dark" rel="noreferrer" title="twitter profile">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+            </div>
+            <div class="content has-text-centered is-hidden-mobile copyright">
+                <p class="">
+                    <a href="https://reak.in" class="has-text-grey-dark" title="crafted with love at reak infotech llp">Crafted with <i class="fa fa-heart has-text-danger-dark"></i> @ REAK</a>
+                    <br /><i class="far fa-copyright"></i> 2021 - Ashish Saxena
+                </p>
+            </div>
+        </div>
+</div>
+
+<div class="container column is-hidden-tablet">
+    <div class="columns is-mobile">
+        <div class="column">
+            <figure class="image is-128x128">
+                <img loading="lazy" class="is-rounded" alt="Ashish Saxena Avatar"
+                                        src="images/profile.png">
+            </figure>
+        </div>
+        <div class="column has-text-left">
+            <p class="title is-4">Ashish Saxena</p>
+            <p class="subtitle is-6 mt-2">My personal thoughts, ideas and rants</p>
+        </div>
+    </div>
+</div>
+
+<div class="column">
+    <div class="container">
+    <div class="card">
+            
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img loading="lazy" src="images/moving-away-from-travis-to-github/cover.png" alt="Migrate from TravisCI to Github Actions">
+            </figure>
+        </div>
+        
+        <div class="card-content">
+            <h1 class="title">Moving away from TravisCI to Github Actions</h1>
+            <div class="buttons">
+                
+                <a class="button is-rounded is-small has-background-grey-dark has-text-white p-2" href="https://ashishsaxena.net/category/programming/" title="Programming">
+                    Programming
+                </a>
+                
+                <a class="button is-rounded is-small has-background-grey-dark has-text-white p-2" href="https://ashishsaxena.net/category/web/" title="Web">
+                    Web
+                </a>
+                
+            </div>
+            <div class="pb-6">
+                <time datetime="2020-11-30"><i class="far fa-clock"></i> November 30, 2020</time>
+            </div>
+            <h2 class="subtitle content is-size-6">
+                <p>With the recent changes to TravisCI free account, I walk you through my migration
+experience and what I feel like are the pros and cons of each platform</p>
+<p>With the recent changes to TravisCI free plans I felt it was best if I could migrate away,
+ofcourse I understand the reasoning behind it.</p>
+<p>The service has been struggling for some time now, TravisCI was bought by an investment group and
+their priority would have been maximizing profits but providing users free cloud resources
+ofcourse goes against it.<br>
+The open source queue in October was something that could never work with active projects
+the wait time was around 4-6 hours for my timezone which any active open source project cannot
+work with. I wasn&rsquo;t too bothered as my website hardly takes a minute of compute time and isn&rsquo;t
+something urgent so I didn&rsquo;t quite feel the need to move away.</p>
+<p>This changed with the new open-source changes TravisCI has brought, they now have a static cap which I believe is one-time and they ask to contact them for extra credits which will be reviewed on a case by case basis. The entire thing is worded in a very confusing way.
+So in short I decided that since this project is more of a hobby I can pickup Github Actions
+and see how it scales up against drone, circleci and travis (build systems that I have used
+previously or currently use)</p>
+<p>You can check my very first post where I quickly walkthrough my <code>.travis.yml</code> file, it&rsquo;s a
+very simple workflow. I&rsquo;ll just recap it below</p>
+<pre><code>Clone Repo
+Install Node
+Install Node Dependencies
+Run NPM script to build CSS from SCSS
+Install GoLang and Hugo
+Build the website
+Sync/Push the folder to gh-pages branch on my repo
+</code></pre><p>So I start at the top and start riffling through the documentation looking for examples
+to quick start.</p>
+<p>It looks pretty straightforward, The root definition is workflow which can comprise of multiple jobs and
+each jobs would have instructions to make it work. Since what we&rsquo;re doing here is pretty
+simple I decided to use a single job for the entire thing.</p>
+<p>So to start with, we need to define a workflow and build params which can be done with</p>
+<pre><code>name: WebsiteDeploy
+
+# Run this workflow every time a new commit pushed to your repository
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+</code></pre><p>WebsiteDeploy is my workflow name, It is user-editable and shows up on your badge so make sure
+you name it accordingly.</p>
+<p>Since I use <code>main</code> branch to manage website and <code>master</code> for pushing changes to upstream or
+as a platform to pick changes from upstream and apply to my blog, I am triggering build only on
+changes done on the main branch or if there are pull requests to it.
+<br>
+<br>
+Next, is something that I implemented at the very end once my entire build was working as
+expected. This gives me easy access to change any of the versions and re-use the same build if I
+am hosting any other website or some of you want to pick it up for your own use.</p>
+<pre><code>env:
+  NODE_VERSION: '14'
+  GO_VERSION: '^1.15.5'
+  HUGO_VERSION: '0.79.0'
+  CUSTOM_DOMAIN: true
+  DOMAIN: 'ashishsaxena.net'
+</code></pre><p>Github Actions allows to set Workflow environment variables which can be used within the config
+so it makes it very easy to upgrade or downgrade version as needed.
+<br>
+<br>
+Next, we configure the job and the OS we need to use for the build version, This can be done
+through the following</p>
+<pre><code>jobs:
+  # Set the job key. The key is displayed as the job name
+  # when a job name is not provided
+  website-deploy:
+    # Name the Job
+    name: Deploy to Github Pages
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+</code></pre><p>Now we get onto the spicy bit,
+First thing we need to do is clone our repo on the build system so we can get started</p>
+<pre><code>    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - uses: actions/checkout@v2
+</code></pre><p>Github has some standard defined actions which you can find here <a href="https://github.com/actions" target="_blank" rel="noreferrer noopener">https://github.com/actions</a>
+
+
+<br>
+<br>
+Once our repo is cloned, we move onto installing node, which again can be done through the
+standard github action</p>
+<pre><code>      # Install NodeJS
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{env.NODE_VERSION}}
+</code></pre><p>You can skip defining the node-version and let it use the latest automatically but I prefer
+maintaining versions manually.</p>
+<p>Once node is installed, we can install dependencies and build css from scss with the following
+code</p>
+<pre><code>      # Install Dependencies
+      - run: npm install
+      # Build CSS from SCSS
+      - run: npm run css-build
+</code></pre><p><br>
+<br>
+Now it&rsquo;s time to install GoLang and Hugo,
+Fortunately for us, GoLang installation is simple as its available in the standard actions</p>
+<pre><code>      # Install Go
+      - uses: actions/setup-go@v2
+        with:
+          go-version: ${{env.GO_VERSION}}
+</code></pre><p>But our luck runs out with Hugo, I was able to find some user-built actions for it but
+honestly I am not sure of doing that. I am pretty old school and hate the javascript approach
+of <code>npm install hello-world</code>. It&rsquo;s just a matter or downloading and installing deb so we do it
+the old school way</p>
+<pre><code>      # Install Hugo
+      - name: Install Hugo
+        run: |
+          wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{env.HUGO_VERSION}}/hugo_${{env.HUGO_VERSION}}_Linux-64bit.deb
+          sudo dpkg -i hugo.deb
+          rm -rf hugo.deb
+          hugo -d website
+</code></pre><p><strong>Wasn&rsquo;t that hard, was it ?</strong></p>
+<p>With the last command there, we basically generate our static website in the <code>website</code>
+folder.
+<br>
+<br>
+<br>
+Now we have everything we need, but the task is to push whatever is inside the <code>website</code> folder
+to <code>gh-pages</code> branch in our repo for github pages to pick it up.</p>
+<p>This was probably the hardest part, I tried looking for a solution but couldn&rsquo;t find any. There
+were custom actions built by the community but they were full of emoji&rsquo;s in the console log so
+I decided to stay away from those.</p>
+<p>So being the old school guy I am, Decided going old school hacky way was the best way forward.
+Here&rsquo;s what I came up with</p>
+<pre><code>      # Deploy to gh-pages branch
+      - name: Deploy to Pages
+        run: |
+          git add website/
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m &quot;deploy&quot;
+          git subtree split --prefix website -b gh-pages
+          git push -f origin gh-pages:gh-pages
+</code></pre><p>It&rsquo;s nothing ground breaking or unique, On the contrary when I looked up using subtree for
+this was able to find similar examples.</p>
+<p>What we&rsquo;re doing here is adding <code>website/</code> to our project and then splitting the files inside the
+folder to another branch and force-pushing it to our repo.
+I don&rsquo;t think there&rsquo;s any logic to maintaining versions of the html files, so force push was
+the logical way to nuke the old version and upload the new one.</p>
+<p>Important thing to rememeber that nuking branch removes CNAME file so if you&rsquo;re using custom
+domain you will have to create the file.</p>
+<pre><code>      # Set Custom Domain Name
+      - if: ${{env.CUSTOM_DOMAIN}}
+        name: Set Custom Domain
+        run: echo ${{env.DOMAIN}} &gt; website/CNAME
+</code></pre><p>Github actions has this nifty if condition, So one can toggle the variables on top and skip
+adding the CNAME file to the branch if no domain is set.</p>
+<p>And that&rsquo;s the end of it, If you are lazy and looking for the copy-paste you can find it here <a href="https://raw.githubusercontent.com/eclipsed-ninja/personal-website/main/.github/workflows/deploy.yaml" target="_blank" rel="noreferrer noopener">https://raw.githubusercontent.com/eclipsed-ninja/personal-website/main/.github/workflows/deploy.yaml</a>
+
+</p>
+            </h2>
+            <div class="tags mt-6">
+                <span class="pr-3">
+                    <i class="fas fa-tags"></i>
+                </span>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/programming/" title="Programming">Programming</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/travisci/" title="Travisci">Travisci</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/github/" title="Github">Github</a>
+                
+                <a class="tag" href="https://ashishsaxena.net/tag/actions/" title="Actions">Actions</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="column is-one-fifth">
+</div>
+
+            </div><script>
+    document.getElementById("mobile-menu-show").addEventListener("click", function(){
+        document.getElementById("mobile-menu").classList.add("show");
+    });
+
+    document.getElementById("mobile-menu-close").addEventListener("click", function(){
+        document.getElementById("mobile-menu").classList.remove("show");
+    });
+</script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-180784437-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</section><footer class="footer is-clickable  is-hidden-tablet">
+    <div class="level is-size-3 is-mobile">
+        
+        <div class="level-item has-text-centered">
+            <a href=https://www.facebook.com/saxena.ashish55/ target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+        
+        <div class="level-item has-text-centered">
+            <a href=https://github.com/eclipsed-ninja/ target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        
+        <div class="level-item has-text-centered">
+            <a href=https://www.linkedin.com/in/ashishsaxena5/ target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        
+        <div class="level-item has-text-centered">
+            <a href=https://twitter.com/eclipsed_ninja target="_blank" class="has-text-grey-dark">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        
+    </div>
+    <div class="content has-text-centered">
+        <p class="">
+            <a href="https://reak.in" class="has-text-grey-dark" title="crafted with love at reak infotech llp">Crafted with <i class="fa fa-heart has-text-danger-dark"></i> @ REAK</a>
+            <br /><i class="far fa-copyright"></i> 2021 - Ashish Saxena
+        </p>
+    </div>
+</footer>
+</body>
+</html>
+</body>
+</html>
